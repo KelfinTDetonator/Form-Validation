@@ -1,0 +1,75 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    font-family: 'Poppins', sans-serif;
+}
+
+#form{
+    width: 300px;
+    height: auto;
+    max-height: 100%;
+    margin: 20vh auto 0 auto;
+    background-color: whitesmoke;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+#form h1 {
+    color: #0f2027;
+    text-align: center;
+}
+
+#form button{
+    padding: 10px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    max-width: 100%;
+    color: white;
+    background-color: rgb(41, 57, 194);
+    border: none;
+    border-radius: 0.5em;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2.5pt;
+}
+
+#form .input-control{
+    margin: 7px 15px;
+    /* padding: 10px 0; */
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-control input{
+    padding: 0.6em;
+    margin-bottom: 4px;
+    border: 2px solid #f0f0f0;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.input-control input:focus{outline: 0;}
+.input-control.success input{border-color: #09c372;}
+.input-control.error input{border: 1px solid #ff3860;}
+
+.input-control .error{
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
+
+.input-control.error input:focus{
+    border: 2px solid #ff3860; 
+    transition: ease 0.1s;
+}
+
