@@ -18,7 +18,10 @@ const validateInputs = () =>{
 
     if(usernameValue === ''){ //kalo username kosong, otomatis error
         setError(uname, 'Username is required'); //error
-    } else{
+    } else if(usernameValue.length < 4){
+        setError(uname, 'Username must be at least 4 characters')
+    } 
+    else{
         setSuccess(uname); //berhasil
     }
 
@@ -56,11 +59,11 @@ const setError = (element, message) =>{
 
     errorDisplay.innerText = message; //nampilin error nya apa pada div.error
     inputControl.classList.add('error'); //tambahin kelas error, supaya tampil message error nya dibantu css (pewarnaan merah).
-    inputControl.classList.remove('success'); //success dihapus kalo ada error, of course
+    inputControl.classList.remove('success'); //success dihapus kalo ada error, ofc
 }
 
 const setSuccess = element =>{
-    const inputControl = element.parentElement; /*.parentElement ini biar lo tau parent dari suatu elemen, contohnya kalo password error.. 
+    const inputControl = element.parentElement; /*.parentElement ini biar tau parent dari suatu elemen, contohnya kalo password error.. 
     parentnya itu div.input-control, div.input-control ini dipindahin ke const InputControl biar bisa di edit js buat nambahin class error/success */
     const errorDisplay = inputControl.querySelector('.error'); //checking dulu masih ada error apa engga
 
@@ -70,7 +73,7 @@ const setSuccess = element =>{
 }
 
 const isValidEmail = (email) => {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
 
